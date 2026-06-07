@@ -11,11 +11,11 @@ export function FAQ() {
     <section
       id="faq"
       ref={ref}
-      className="reveal py-16 sm:py-24 bg-ink-soft border-t border-cream/5"
+      className="reveal py-14 min-[375px]:py-16 sm:py-24 bg-ink-soft border-t border-cream/5"
       aria-labelledby="faq-title"
     >
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <h2 id="faq-title" className="font-display text-3xl sm:text-4xl text-cream mb-10 text-center">
+      <div className="mx-auto max-w-3xl px-3 min-[375px]:px-4 sm:px-6">
+        <h2 id="faq-title" className="font-display text-[1.625rem] max-[374px]:text-2xl min-[375px]:text-3xl sm:text-4xl text-cream mb-6 max-[374px]:mb-7 min-[375px]:mb-10 text-center">
           {t.faq.title}
         </h2>
 
@@ -27,11 +27,11 @@ export function FAQ() {
                 <h3>
                   <button
                     type="button"
-                    className="flex w-full min-h-[44px] items-center justify-between gap-4 px-4 sm:px-6 py-4 text-left text-sm sm:text-base text-cream hover:text-gold transition-colors"
+                    className="flex w-full min-h-[44px] items-center justify-between gap-2.5 max-[374px]:gap-2 min-[375px]:gap-4 px-3 min-[375px]:px-4 sm:px-6 py-3 max-[374px]:py-3 min-[375px]:py-4 text-left text-[0.8125rem] max-[374px]:leading-snug min-[375px]:text-sm sm:text-base text-cream hover:text-gold transition-colors"
                     onClick={() => setOpen(isOpen ? null : i)}
                     aria-expanded={isOpen}
                   >
-                    {item.q}
+                    <span className="min-w-0 pr-1">{item.q}</span>
                     <span
                       className={`shrink-0 text-gold transition-transform ${isOpen ? "rotate-45" : ""}`}
                       aria-hidden
@@ -46,7 +46,7 @@ export function FAQ() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-4 sm:px-6 pb-4 text-sm text-cream-muted leading-relaxed">
+                    <p className="px-3 min-[375px]:px-4 sm:px-6 pb-3.5 min-[375px]:pb-4 text-[0.8125rem] min-[375px]:text-sm text-cream-muted leading-relaxed">
                       {item.a}
                     </p>
                   </div>

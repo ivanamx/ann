@@ -6,13 +6,13 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-cream/5 py-10 sm:py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-        <p className="font-display text-lg text-cream">
+    <footer className="border-t border-cream/5 pt-8 max-[374px]:pt-7 pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:py-12">
+      <div className="mx-auto max-w-7xl px-3 min-[375px]:px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 max-[374px]:gap-3.5 min-[375px]:gap-6">
+        <p className="font-display text-base max-[374px]:text-lg text-cream">
           Ann <span className="text-gold italic">Atelier</span>
         </p>
 
-        <nav className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs uppercase tracking-widest text-cream-muted" aria-label="Footer">
+        <nav className="flex flex-wrap items-center justify-center gap-x-3 gap-y-0 max-[374px]:gap-x-2.5 min-[375px]:gap-4 sm:gap-6 text-[0.62rem] max-[374px]:tracking-[0.1em] min-[375px]:text-xs uppercase tracking-[0.14em] min-[375px]:tracking-widest text-cream-muted" aria-label="Footer">
           <a href={BUSINESS.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-gold min-h-[44px] flex items-center">
             Instagram
           </a>
@@ -27,7 +27,7 @@ export function Footer() {
           </a>
         </nav>
 
-        <p className="text-[0.65rem] text-cream-muted text-center sm:text-right">
+        <p className="footer-copyright text-[0.62rem] max-[374px]:text-[0.58rem] text-cream-muted text-center sm:text-right leading-snug">
           © {year} {BUSINESS.name}. {t.footer.rights}
         </p>
       </div>

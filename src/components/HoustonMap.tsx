@@ -24,7 +24,7 @@ export function HoustonMap() {
   const { theme } = useTheme();
 
   return (
-    <div className="houston-map relative aspect-[4/3] min-h-[240px] w-full overflow-hidden">
+    <div className="houston-map relative aspect-[4/3] min-h-[200px] max-[374px]:min-h-[190px] min-[375px]:min-h-[240px] w-full overflow-hidden">
       <MapContainer
         key={theme}
         center={HOUSTON_CENTER}

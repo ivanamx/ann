@@ -57,12 +57,12 @@ export function Nav() {
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${headerClass}`}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4"
+        className="mx-auto flex max-w-7xl items-center justify-between gap-1.5 max-[374px]:gap-1 min-[375px]:gap-3 px-3 py-2.5 max-[374px]:py-2 min-[375px]:px-4 min-[375px]:py-3 sm:px-6 sm:py-4"
         aria-label="Main"
       >
         <a
           href="#"
-          className="font-display text-xl tracking-wide text-cream sm:text-2xl min-h-[44px] min-w-[44px] flex items-center nav-link-shadow shrink-0"
+          className="font-display text-base max-[374px]:text-[1.0625rem] min-[375px]:text-xl tracking-wide text-cream sm:text-2xl min-h-[44px] min-w-[44px] flex items-center nav-link-shadow shrink-0"
           data-cursor-hover
         >
           Ann <span className="text-gold italic">Atelier</span>
@@ -78,7 +78,7 @@ export function Nav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+        <div className="flex items-center gap-0.5 min-[375px]:gap-1 sm:gap-2 shrink-0">
           <ThemeToggle
             className={
               onHero && !scrolled ? "text-cream hover:text-gold" : "text-cream-muted hover:text-gold"
@@ -129,12 +129,12 @@ export function Nav() {
         }`}
         aria-hidden={!open}
       >
-        <ul className="flex flex-col items-center justify-center min-h-[100dvh] gap-8 pt-20">
+        <ul className="flex flex-col items-center justify-center min-h-[100dvh] gap-5 max-[374px]:gap-4 min-[375px]:gap-8 pt-[max(5rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))] px-4">
           {links.map((l) => (
             <li key={l.key}>
               <a
                 href={l.href}
-                className="font-display text-3xl text-cream hover:text-gold transition-colors"
+                className="font-display text-[1.625rem] max-[374px]:text-2xl min-[375px]:text-3xl text-cream hover:text-gold transition-colors text-center"
                 onClick={() => setOpen(false)}
               >
                 {t.nav[l.key]}

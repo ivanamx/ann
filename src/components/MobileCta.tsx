@@ -14,17 +14,19 @@ export function MobileCta() {
 
   return (
     <div
-      className={`fixed bottom-0 inset-x-0 z-40 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:hidden transition-transform duration-300 ${
+      className={`fixed bottom-0 inset-x-0 z-40 sm:hidden transition-transform duration-300 ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}
       aria-hidden={!visible}
     >
-      <a
-        href="#contact"
-        className="flex min-h-[44px] items-center justify-center w-full bg-gold text-ink text-xs font-semibold uppercase tracking-[0.18em] shadow-lg shadow-ink/50"
-      >
-        {t.nav.book}
-      </a>
+      <div className="mobile-cta-bar bg-gradient-to-t from-ink via-ink/95 to-transparent px-3 max-[374px]:px-2.5 pt-3 max-[374px]:pt-2.5 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <a
+          href="#contact"
+          className="mobile-cta-bar__link flex min-h-[44px] items-center justify-center w-full bg-gold text-ink text-[0.65rem] min-[375px]:text-xs font-semibold uppercase tracking-[0.14em] min-[375px]:tracking-[0.18em] shadow-lg shadow-ink/50"
+        >
+          {t.nav.book}
+        </a>
+      </div>
     </div>
   );
 }

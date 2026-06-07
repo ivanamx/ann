@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://annatelier.com/sitemap.xml
+Sitemap: https://ann.ironslash.com/sitemap.xml

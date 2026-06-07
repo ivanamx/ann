@@ -476,7 +476,137 @@ html[data-theme="light"] .lookbook-card:hover {
   box-shadow: none;
 }
 
-/* Hero — más foto visible, transición más estrecha */
+/* ── Extra-small phones (≤374px · iPhone SE) ── */
+@media (max-width: 374px) {
+  .lookbook-card__caption {
+    padding: 0.65rem 0.75rem 0.75rem;
+  }
+
+  .lookbook-card__title {
+    font-size: clamp(0.95rem, 4.8vw, 1.15rem);
+    line-height: 1.15;
+  }
+
+  .lookbook-card__tag {
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+  }
+
+  .lookbook-card:not(.lookbook-card--featured) .lookbook-card__event {
+    display: none;
+  }
+
+  .lookbook-card__plus {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.875rem;
+  }
+
+  .houston-section__copy {
+    padding: 0.875rem 0.625rem 1rem;
+    margin-inline: 0;
+  }
+
+  .houston-section__copy::before {
+    inset: -0.125rem -0.5rem;
+  }
+
+  .hero-scroll-hint {
+    display: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+  }
+
+  .hero-visual__fade-left {
+    background: linear-gradient(
+      180deg,
+      var(--color-ink) 0%,
+      color-mix(in srgb, var(--color-ink) 92%, transparent) 38%,
+      color-mix(in srgb, var(--color-ink) 50%, transparent) 62%,
+      transparent 86%
+    );
+  }
+
+  html[data-theme="light"] .hero-visual__fade-left {
+    background: linear-gradient(
+      180deg,
+      var(--blend-surface) 0%,
+      color-mix(in srgb, var(--blend-surface) 82%, transparent) 32%,
+      color-mix(in srgb, var(--blend-surface) 28%, transparent) 56%,
+      transparent 80%
+    );
+  }
+
+  .marquee-track span {
+    font-size: 1.125rem;
+  }
+
+  .testimonials-section blockquote {
+    font-size: 1.125rem;
+    line-height: 1.45;
+  }
+
+  .mobile-cta-bar a {
+    font-size: 0.58rem;
+    letter-spacing: 0.11em;
+    padding-inline: 0.75rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.58rem;
+    line-height: 1.45;
+    max-width: 17.5rem;
+  }
+
+  #philosophy article span.font-display {
+    font-size: 2.25rem;
+  }
+}
+
+/* Hero title — fluido; desktop lg+ conserva escala editorial original */
+.hero-title {
+  font-size: clamp(1.75rem, 7.5vw, 2.75rem);
+  line-height: 1.1;
+}
+
+/* Mobile typography & hero — ≤639px (no afecta desktop lg+) */
+@media (max-width: 639px) {
+  .hero-title {
+    font-size: clamp(1.625rem, 7.25vw, 2.125rem);
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  .mobile-cta-bar {
+    pointer-events: none;
+  }
+
+  .mobile-cta-bar a {
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 374px) {
+  .hero-title {
+    font-size: clamp(1.4375rem, 6.85vw, 1.6875rem);
+    line-height: 1.16;
+  }
+}
+
+/* Desktop hero title — preservar escala editorial en lg+ */
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: clamp(1.75rem, 8vw, 4.25rem);
+    line-height: 1.08;
+  }
+}
+
+/* Hero — imagen integrada con difuminado */
 html[data-theme="light"] .hero-visual__fade-left {
   background: linear-gradient(
     105deg,
@@ -891,7 +1021,8 @@ html[data-theme="light"] .houston-section__map-wrap {
 /* ── Dress Modal · editorial fluido ── */
 
 body.dress-modal-open header.fixed,
-body.dress-modal-open .fixed.bottom-0.inset-x-0.z-40 {
+body.dress-modal-open .fixed.bottom-0.inset-x-0.z-40,
+body.dress-modal-open .mobile-cta-bar {
   visibility: hidden;
   pointer-events: none;
 }

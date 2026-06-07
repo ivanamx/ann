@@ -25,16 +25,16 @@ export function Contact() {
       <SectionBackdrop
         imageSrc={bg.src}
         imageAlt={bg.alt[locale]}
-        className="py-16 sm:py-28"
+        className="py-14 min-[375px]:py-16 sm:py-28 pb-[calc(4.75rem+env(safe-area-inset-bottom,0px))] sm:pb-28"
         overlay="light"
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-start">
+        <div className="mx-auto max-w-7xl px-3 min-[375px]:px-4 sm:px-6">
+          <div className="grid gap-10 min-[375px]:gap-12 lg:grid-cols-2 lg:gap-20 items-start">
             <div>
-              <h2 id="contact-title" className="font-display text-3xl sm:text-5xl text-cream">
+              <h2 id="contact-title" className="font-display text-2xl min-[375px]:text-3xl sm:text-5xl text-cream">
                 {t.cta.title}
               </h2>
-              <p className="mt-4 text-cream-muted text-sm sm:text-base max-w-md">{t.cta.subtitle}</p>
+              <p className="mt-3 min-[375px]:mt-4 text-cream-muted text-[0.8125rem] min-[375px]:text-sm sm:text-base max-w-md">{t.cta.subtitle}</p>
               <div
                 className="mt-10 hidden lg:block w-full max-w-xs h-px bg-gradient-to-r from-gold via-gold-dim to-transparent"
                 aria-hidden
@@ -48,13 +48,13 @@ export function Contact() {
             ) : (
               <form
                 onSubmit={onSubmit}
-                className="contact-form space-y-4 rounded-sm border border-cream/10 bg-ink/75 p-5 sm:p-6 backdrop-blur-md shadow-form"
+                className="contact-form space-y-3 max-[374px]:space-y-2.5 min-[375px]:space-y-4 rounded-sm border border-cream/10 bg-ink/75 p-3.5 max-[374px]:p-3 min-[375px]:p-5 sm:p-6 backdrop-blur-md shadow-form"
                 noValidate
               >
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-[0.65rem] uppercase tracking-[0.25em] text-cream-muted mb-2"
+                    className="block text-[0.62rem] max-[374px]:tracking-[0.18em] uppercase tracking-[0.25em] text-cream-muted mb-1.5 max-[374px]:mb-1.5 min-[375px]:mb-2"
                   >
                     {t.cta.name}
                   </label>
@@ -70,7 +70,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-[0.65rem] uppercase tracking-[0.25em] text-cream-muted mb-2"
+                    className="block text-[0.62rem] max-[374px]:tracking-[0.18em] uppercase tracking-[0.25em] text-cream-muted mb-1.5 max-[374px]:mb-1.5 min-[375px]:mb-2"
                   >
                     {t.cta.email}
                   </label>
@@ -86,7 +86,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="event"
-                    className="block text-[0.65rem] uppercase tracking-[0.25em] text-cream-muted mb-2"
+                    className="block text-[0.62rem] max-[374px]:tracking-[0.18em] uppercase tracking-[0.25em] text-cream-muted mb-1.5 max-[374px]:mb-1.5 min-[375px]:mb-2"
                   >
                     {t.cta.event}
                   </label>
@@ -100,7 +100,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-[0.65rem] uppercase tracking-[0.25em] text-cream-muted mb-2"
+                    className="block text-[0.62rem] max-[374px]:tracking-[0.18em] uppercase tracking-[0.25em] text-cream-muted mb-1.5 max-[374px]:mb-1.5 min-[375px]:mb-2"
                   >
                     {t.cta.message}
                   </label>

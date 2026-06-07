@@ -13,20 +13,20 @@ export function Lookbook() {
     <section
       id="lookbook"
       ref={ref}
-      className="reveal pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pb-28 border-b border-cream/5"
+      className="reveal pt-8 pb-14 min-[375px]:pt-10 min-[375px]:pb-16 sm:pt-14 sm:pb-24 lg:pb-28 border-b border-cream/5"
       aria-labelledby="lookbook-title"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <header className="mb-10 sm:mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+      <div className="mx-auto max-w-7xl px-3 min-[375px]:px-4 sm:px-6">
+        <header className="mb-8 min-[375px]:mb-10 sm:mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 min-[375px]:gap-4">
           <div>
-            <h2 id="lookbook-title" className="font-display text-3xl sm:text-4xl text-cream">
+            <h2 id="lookbook-title" className="font-display text-2xl min-[375px]:text-3xl sm:text-4xl text-cream">
               {t.lookbook.title}
             </h2>
-            <p className="mt-2 text-cream-muted text-sm">{t.lookbook.subtitle}</p>
+            <p className="mt-1.5 min-[375px]:mt-2 text-cream-muted text-[0.8125rem] min-[375px]:text-sm">{t.lookbook.subtitle}</p>
           </div>
         </header>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 auto-rows-[minmax(140px,1fr)] sm:auto-rows-[minmax(180px,1fr)]">
+        <div className="grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-3 gap-2 max-[374px]:gap-1.5 min-[375px]:gap-3 sm:gap-4 auto-rows-[minmax(180px,1fr)] min-[480px]:auto-rows-[minmax(140px,1fr)] sm:auto-rows-[minmax(180px,1fr)]">
           {t.lookbook.items.map((item, i) => {
             const image = LOOKBOOK_IMAGES[i];
             const alt = image.alt[locale];
@@ -36,7 +36,9 @@ export function Lookbook() {
                 key={item.title}
                 type="button"
                 className={`lookbook-card group relative overflow-hidden text-left bg-ink-soft ${
-                  i === 0 ? "col-span-2 row-span-2 min-h-[200px] sm:min-h-[320px]" : "min-h-[140px]"
+                  i === 0
+                    ? "lookbook-card--featured min-[480px]:col-span-2 min-[480px]:row-span-2 min-h-[200px] max-[374px]:min-h-[210px] min-[375px]:min-h-[240px] sm:min-h-[320px]"
+                    : "min-h-[150px] max-[374px]:min-h-[145px] min-[480px]:min-h-[140px]"
                 } border border-cream/5 hover:border-gold/40 transition-all duration-500`}
                 onClick={() => setActive(i)}
                 data-cursor-hover
@@ -60,7 +62,7 @@ export function Lookbook() {
                   </h3>
                 </div>
                 <div
-                  className="lookbook-card__plus absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-lg"
+                  className="lookbook-card__plus absolute top-3 right-3 min-[375px]:top-4 min-[375px]:right-4 w-7 h-7 min-[375px]:w-8 min-[375px]:h-8 rounded-full flex items-center justify-center text-base min-[375px]:text-lg"
                   aria-hidden
                 >
                   +

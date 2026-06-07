@@ -1,8 +1,12 @@
+import { lazy, Suspense } from "react";
 import { useLocale } from "../i18n/LocaleContext";
 import { useReveal } from "../hooks/useReveal";
 import { BUSINESS } from "../data/seo";
 import { SECTION_BACKGROUNDS } from "../data/images";
-import { HoustonMap } from "./HoustonMap";
+
+const HoustonMap = lazy(() =>
+  import("./HoustonMap").then((m) => ({ default: m.HoustonMap })),
+);
 
 export function Houston() {
   const { t, locale } = useLocale();
@@ -34,15 +38,15 @@ export function Houston() {
       </div>
       <span className="sr-only">{bg.alt[locale]}</span>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-3 min-[375px]:px-4 py-14 min-[375px]:py-16 sm:px-6 sm:py-24">
+        <div className="grid gap-8 min-[375px]:gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
           <div className="houston-section__copy lg:pr-4">
-            <h2 id="houston-title" className="font-display text-3xl sm:text-4xl text-cream">
+            <h2 id="houston-title" className="font-display text-2xl min-[375px]:text-3xl sm:text-4xl text-cream">
               {t.houston.title}
             </h2>
-            <p className="mt-2 text-cream-muted text-sm sm:text-base">{t.houston.subtitle}</p>
+            <p className="mt-1.5 min-[375px]:mt-2 text-cream-muted text-[0.8125rem] min-[375px]:text-sm sm:text-base">{t.houston.subtitle}</p>
 
-            <address className="mt-8 not-italic text-sm space-y-2">
+            <address className="mt-6 min-[375px]:mt-8 not-italic text-[0.8125rem] min-[375px]:text-sm space-y-1.5 min-[375px]:space-y-2">
               <p className="text-cream">{t.houston.address}</p>
               <p className="text-cream-muted">{t.houston.city}</p>
               <p className="houston-section__hours text-gold">{t.houston.hours}</p>
@@ -59,7 +63,7 @@ export function Houston() {
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="houston-section__directions mt-6 inline-flex min-h-[44px] items-center px-6 py-3 border border-gold/50 text-gold text-xs uppercase tracking-[0.2em] hover:bg-gold hover:text-ink transition-colors"
+              className="houston-section__directions mt-5 min-[375px]:mt-6 inline-flex min-h-[44px] items-center px-5 min-[375px]:px-6 py-2.5 min-[375px]:py-3 border border-gold/50 text-gold text-[0.65rem] min-[375px]:text-xs uppercase tracking-[0.16em] min-[375px]:tracking-[0.2em] hover:bg-gold hover:text-ink transition-colors"
               data-cursor-hover
             >
               {t.houston.directions}
@@ -67,7 +71,16 @@ export function Houston() {
           </div>
 
           <div className="houston-section__map-wrap relative lg:pl-2">
-            <HoustonMap />
+            <Suspense
+              fallback={
+                <div
+                  className="houston-map relative aspect-[4/3] min-h-[200px] max-[374px]:min-h-[190px] min-[375px]:min-h-[240px] w-full overflow-hidden bg-ink-soft animate-pulse"
+                  aria-hidden
+                />
+              }
+            >
+              <HoustonMap />
+            </Suspense>
           </div>
         </div>
       </div>
