@@ -9,7 +9,6 @@ type Props = {
   labels: {
     perMonth: string;
     minimum: string;
-    recommended: string;
     includes: string;
     notIncluded: string;
     schedule: string;
@@ -55,7 +54,7 @@ export function PlansDocument({ doc, locale, labels }: Props) {
               aria-labelledby={`tier-${tier.id}-name`}
             >
               {tier.recommended ? (
-                <span className="plans-tier__badge">{labels.recommended}</span>
+                <span className="plans-tier__badge"></span>
               ) : null}
 
               {tier.id === "growth" ? (
