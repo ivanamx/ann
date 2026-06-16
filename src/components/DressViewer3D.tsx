@@ -7,10 +7,10 @@ import { useTheme, type Theme } from "../theme/ThemeContext";
 
 const VIEWER_PALETTE: Record<
   Theme,
-  { bg: string; cream: string; gold: string; shadow: string }
+  { bg: string; cream: string; accent: string; shadow: string }
 > = {
-  dark: { bg: "#0a0908", cream: "#f5f0e8", gold: "#c9a962", shadow: "#0a0908" },
-  light: { bg: "#f8f4ec", cream: "#141210", gold: "#9a7d3c", shadow: "#e8e2d8" },
+  dark: { bg: "#1f1d1b", cream: "#e8e4dc", accent: "#9a8b7a", shadow: "#1f1d1b" },
+  light: { bg: "#faf9f7", cream: "#2c2825", accent: "#9a8b7a", shadow: "#e8e2d8" },
 };
 
 type SilhouetteType = DressVisual["silhouette"];
@@ -125,7 +125,7 @@ function HotspotMarker({
         }}
       >
         <sphereGeometry args={[0.022, 16, 16]} />
-        <meshBasicMaterial color={active ? palette.cream : palette.gold} />
+        <meshBasicMaterial color={active ? palette.cream : palette.accent} />
       </mesh>
     </group>
   );
@@ -148,7 +148,7 @@ function Scene({
     <>
       <ambientLight intensity={0.35} />
       <directionalLight position={[3, 5, 4]} intensity={1.1} castShadow shadow-mapSize={[512, 512]} />
-      <directionalLight position={[-4, 2, -2]} intensity={0.4} color={palette.gold} />
+      <directionalLight position={[-4, 2, -2]} intensity={0.4} color={palette.accent} />
       <pointLight position={[0, 2.5, 2]} intensity={0.5} color={palette.cream} />
 
       <DressMesh visual={visual} />

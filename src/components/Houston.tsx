@@ -49,11 +49,11 @@ export function Houston() {
             <address className="mt-6 min-[375px]:mt-8 not-italic text-[0.8125rem] min-[375px]:text-sm space-y-1.5 min-[375px]:space-y-2">
               <p className="text-cream">{t.houston.address}</p>
               <p className="text-cream-muted">{t.houston.city}</p>
-              <p className="houston-section__hours text-gold">{t.houston.hours}</p>
+              <p className="houston-section__hours text-accent">{t.houston.hours}</p>
               <p className="text-cream-muted">{t.houston.parking}</p>
               <a
                 href={`tel:${BUSINESS.phone.replace(/[^\d+]/g, "")}`}
-                className="block mt-4 text-cream hover:text-gold transition-colors min-h-[44px] flex items-center"
+                className="block mt-4 text-cream hover:text-accent transition-colors min-h-[44px] flex items-center"
               >
                 {BUSINESS.phone}
               </a>
@@ -63,7 +63,7 @@ export function Houston() {
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="houston-section__directions mt-5 min-[375px]:mt-6 inline-flex min-h-[44px] items-center px-5 min-[375px]:px-6 py-2.5 min-[375px]:py-3 border border-gold/50 text-gold text-[0.65rem] min-[375px]:text-xs uppercase tracking-[0.16em] min-[375px]:tracking-[0.2em] hover:bg-gold hover:text-ink transition-colors"
+              className="houston-section__directions mt-5 min-[375px]:mt-6 inline-flex min-h-[44px] items-center px-5 min-[375px]:px-6 py-2.5 min-[375px]:py-3 border border-accent/50 text-accent text-[0.65rem] min-[375px]:text-xs uppercase tracking-[0.16em] min-[375px]:tracking-[0.2em] hover:bg-accent hover:text-ink transition-colors"
               data-cursor-hover
             >
               {t.houston.directions}

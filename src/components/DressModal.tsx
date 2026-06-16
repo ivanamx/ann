@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, lazy, Suspense } from "react";
 import { createPortal } from "react-dom";
 import { useLocale } from "../i18n/LocaleContext";
+import { useBooking } from "../booking/BookingContext";
 import { LOOKBOOK_3D_ENABLED } from "../config/env";
 import { getLookbookGallery } from "../data/images";
 import { DRESS_VISUALS, DRESS_HOTSPOTS, PHOTO_HOTSPOT_LAYOUTS } from "../data/lookbookDresses";
@@ -22,6 +23,7 @@ type DressModalProps = {
 
 export function DressModal({ index, item, onClose }: DressModalProps) {
   const { t, locale } = useLocale();
+  const { openBooking } = useBooking();
   const modal = t.lookbook.modal;
   const visual = DRESS_VISUALS[index];
   const anchors = DRESS_HOTSPOTS[index];
@@ -63,11 +65,9 @@ export function DressModal({ index, item, onClose }: DressModalProps) {
     dialogRef.current?.focus();
   }, []);
 
-  const scrollToContact = () => {
+  const requestBooking = () => {
     handleClose();
-    requestAnimationFrame(() => {
-      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-    });
+    requestAnimationFrame(() => openBooking());
   };
 
   const content = (
@@ -175,19 +175,8 @@ export function DressModal({ index, item, onClose }: DressModalProps) {
               </ul>
 
               <div className="dress-modal__panel-foot">
-                <div className="dress-modal__metrics">
-                  <div className="dress-modal__metric">
-                    <span className="dress-modal__metric-label">{modal.investment}</span>
-                    <span className="dress-modal__metric-value">{item.investment}</span>
-                  </div>
-                  <div className="dress-modal__metric">
-                    <span className="dress-modal__metric-label">{modal.leadTime}</span>
-                    <span className="dress-modal__metric-value">{item.leadTime}</span>
-                  </div>
-                </div>
-
                 <div className="dress-modal__cta-block">
-                  <button type="button" className="dress-modal__cta" onClick={scrollToContact}>
+                  <button type="button" className="dress-modal__cta" onClick={requestBooking}>
                     {modal.cta}
                   </button>
                   <p className="dress-modal__cta-note">{modal.ctaNote}</p>

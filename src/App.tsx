@@ -5,19 +5,18 @@ import { ThemeProvider } from "./theme/ThemeContext";
 import { JsonLd } from "./components/JsonLd";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
-import { Marquee } from "./components/Marquee";
-import { Philosophy } from "./components/Philosophy";
+import { QuinceCarousel } from "./components/QuinceCarousel";
 import { Process } from "./components/Process";
 import { Lookbook } from "./components/Lookbook";
-import { Testimonials } from "./components/Testimonials";
-import { Houston } from "./components/Houston";
-import { FAQ } from "./components/FAQ";
-import { Contact } from "./components/Contact";
+import { BookingProvider } from "./booking/BookingContext";
+import { FAQProvider } from "./faq/FAQContext";
+import { Instagram } from "./components/Instagram";
 import { Footer } from "./components/Footer";
 import { MobileCta } from "./components/MobileCta";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { TermsPage } from "./pages/TermsPage";
 import { PlansPage } from "./pages/PlansPage";
+import { AdminPage } from "./pages/AdminPage";
 
 function getPathname() {
   const path = window.location.pathname.replace(/\/$/, "") || "/";
@@ -38,14 +37,10 @@ function HomePage() {
       <Nav />
       <main id="main">
         <Hero />
+        <QuinceCarousel />
         <Lookbook />
-        <Marquee />
-        <Philosophy />
         <Process />
-        <Testimonials />
-        <Houston />
-        <FAQ />
-        <Contact />
+        <Instagram />
       </main>
       <Footer />
       <MobileCta />
@@ -59,15 +54,21 @@ export default function App() {
   return (
     <ThemeProvider>
       <LocaleProvider>
-        {path === "/privacy" ? (
-          <PrivacyPage />
-        ) : path === "/terms" ? (
-          <TermsPage />
-        ) : path === "/plans" ? (
-          <PlansPage />
-        ) : (
-          <HomePage />
-        )}
+        <BookingProvider>
+          <FAQProvider>
+            {path === "/privacy" ? (
+              <PrivacyPage />
+            ) : path === "/terms" ? (
+              <TermsPage />
+            ) : path === "/plans" ? (
+              <PlansPage />
+            ) : path.startsWith("/admin") ? (
+              <AdminPage />
+            ) : (
+              <HomePage />
+            )}
+          </FAQProvider>
+        </BookingProvider>
       </LocaleProvider>
     </ThemeProvider>
   );

@@ -6,24 +6,7 @@ export const plansContent: PlansLocaleContent = {
     subtitle: "Ann Atelier · Houston, Texas",
     date: "Proposal · June 2026",
     intro:
-      "Two paths for your atelier online: a one-time frontend delivery, or a monthly plan with launch, hosting, and ongoing care. Most ateliers choose a monthly plan to stay live and receive consultation requests without managing technical details.",
-    frontendOnly: {
-      title: "Frontend Only",
-      tagline: "One-time delivery · as shown today",
-      price: 100,
-      description:
-        "Receive the website frontend exactly as it is now — the design, lookbook, and bilingual experience — delivered as files. Ideal if you already have hosting or prefer to manage everything yourself.",
-      includes: [
-        "Complete frontend (design, lookbook, English & Spanish)",
-        "Production build / source files delivered to you",
-        "No monthly commitment",
-      ],
-      excludes: [
-        "No domain, hosting, or SSL setup",
-        "No contact form email integration",
-        "No updates, support, or maintenance after delivery",
-      ],
-    },
+      "Monthly plans for your atelier online — launch, hosting, and ongoing care included. Stay live and receive consultation requests without managing technical details.",
     tiersLabel: "Monthly plans",
     tiers: [
       {
@@ -60,17 +43,19 @@ export const plansContent: PlansLocaleContent = {
       {
         id: "growth",
         name: "Growth Partner",
-        tagline: "Consultations from your site",
+        tagline: "Launch solo — with clients in the pipeline",
         price: 449,
         minimumMonths: 12,
         features: [
           "Everything in Studio",
-          "Quarterly marketing strategy call (30 min)",
-          "Instagram & Pinterest (4 posts/pins per month + story templates) or Meta Ads — one primary channel set per month",
-          "Local SEO updates (on-page meta, schema, Houston content) once per quarter",
+          "Contact follow-up — auto-reply plus gentle nurture emails for inquiries who haven’t booked yet (no hard selling; you handle the consultation)",
+          "Monthly email campaign — lookbook highlights, Houston event season, and private consultation invitation",
+          "Instagram & Pinterest for your atelier — 4 posts/month (process, fittings, finished pieces) + story templates",
+          "Monthly local SEO — custom gown, gala, and wedding searches in Houston",
+          "Lookbook — up to 3 new pieces on the site each month",
+          "Monthly lead report — form submissions, bookings, and contacts awaiting your personal reply",
           "Up to 1.5 hours/month technical maintenance (bugs, UI tweaks, image optimization)",
-          "Lookbook updates — up to 3 pieces per month",
-          "Ad budget billed separately: $200–500/month (your card, your control)",
+          "Optional Meta Ads for Houston consultation leads — ad budget billed separately: $200–500/month (your card, your control)",
         ],
       },
     ],
@@ -102,24 +87,7 @@ export const plansContent: PlansLocaleContent = {
     subtitle: "Ann Atelier · Houston, Texas",
     date: "Propuesta · Junio 2026",
     intro:
-  "-",
-    frontendOnly: {
-      title: "Solo Frontend",
-      tagline: "Entrega única · tal como está hoy",
-      price: 100,
-      description:
-        "-",
-      includes: [
-        "Frontend completo (diseño, lookbook, inglés y español)",
-        "Build de producción / archivos fuente entregados",
-        "Sin compromiso mensual",
-      ],
-      excludes: [
-        "Sin dominio, hosting ni configuración SSL",
-        "Sin integración de correo en el formulario de contacto",
-        "Sin actualizaciones, soporte ni mantenimiento tras la entrega",
-      ],
-    },
+      "Planes mensuales para tu atelier en línea — lanzamiento, hosting y cuidado continuo incluido. Mantente en línea y recibe solicitudes de consulta sin gestionar detalles técnicos.",
     tiersLabel: "Planes mensuales",
     tiers: [
       {
@@ -156,17 +124,19 @@ export const plansContent: PlansLocaleContent = {
       {
         id: "growth",
         name: "Growth Partner",
-        tagline: "Consultas desde su sitio",
+        tagline: "Tu lanzamiento como atelier independiente",
         price: 449,
         minimumMonths: 12,
         features: [
           "Todo lo incluido en Studio",
-          "Llamada trimestral de estrategia de marketing (30 min)",
-          "Instagram y Pinterest (4 publicaciones/pins al mes + plantillas de stories) o Meta Ads — un conjunto de canales principal al mes",
-          "SEO local (meta, schema, contenido Houston) una vez por trimestre",
+          "Seguimiento de contactos — acuse automático y correos de seguimiento amables para quienes aún no agendaron (sin ventas; tú cierras la consulta)",
+          "Campaña de correo mensual — lookbook, temporada de eventos en Houston e invitación a consulta privada",
+          "Instagram y Pinterest para atelier — 4 publicaciones al mes (proceso, fittings, piezas terminadas) + plantillas de stories",
+          "SEO local mensual — búsquedas de vestidos a medida, galas y bodas en Houston",
+          "Lookbook — hasta 3 piezas nuevas al mes en el sitio",
+          "Reporte mensual de leads — formularios, citas y contactos que requieren tu respuesta personal",
           "Hasta 1.5 h/mes de mantenimiento técnico (errores, ajustes visuales, imágenes)",
-          "Actualizaciones de lookbook — hasta 3 piezas al mes",
-          "Presupuesto de anuncios aparte: $200–500/mes (su tarjeta, su control)",
+          "Meta Ads opcionales para consultas en Houston — presupuesto aparte: $200–500/mes (su tarjeta, su control)",
         ],
       },
     ],

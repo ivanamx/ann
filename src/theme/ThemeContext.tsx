@@ -11,8 +11,8 @@ import {
 export type Theme = "dark" | "light";
 
 const THEME_COLORS: Record<Theme, string> = {
-  dark: "#0a0908",
-  light: "#f8f4ec",
+  dark: "#1f1d1b",
+  light: "#faf9f7",
 };
 
 type ThemeContextValue = {
@@ -24,10 +24,10 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 function detectTheme(): Theme {
-  if (typeof window === "undefined") return "dark";
+  if (typeof window === "undefined") return "light";
   const stored = localStorage.getItem("ann-theme");
   if (stored === "light" || stored === "dark") return stored;
-  return "dark";
+  return "light";
 }
 
 function applyThemeToDocument(theme: Theme) {

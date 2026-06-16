@@ -12,19 +12,25 @@ export type PhotoHotspotLayout = {
   align: "tl" | "tr" | "bl" | "br";
 };
 
-/** Posiciones de anotaciones sobre la foto — una por hotspot, distribuidas en la imagen */
+/** Posiciones de anotaciones — orden alineado con lookbook: quince → boda → noche */
 export const PHOTO_HOTSPOT_LAYOUTS: PhotoHotspotLayout[][] = [
   [
-    { id: "neckline", x: 50, y: 26, labelX: 78, labelY: 14, align: "tr" },
-    { id: "fabric", x: 36, y: 46, labelX: 10, labelY: 40, align: "tl" },
-    { id: "color", x: 64, y: 54, labelX: 90, labelY: 50, align: "tr" },
-    { id: "silhouette", x: 48, y: 74, labelX: 12, labelY: 70, align: "bl" },
+    { id: "neckline", x: 51, y: 23, labelX: 79, labelY: 11, align: "tr" },
+    { id: "fabric", x: 33, y: 47, labelX: 8, labelY: 41, align: "tl" },
+    { id: "color", x: 67, y: 55, labelX: 91, labelY: 49, align: "tr" },
+    { id: "embellishment", x: 52, y: 62, labelX: 13, labelY: 58, align: "bl" },
   ],
   [
     { id: "neckline", x: 52, y: 24, labelX: 82, labelY: 12, align: "tr" },
     { id: "fabric", x: 34, y: 50, labelX: 8, labelY: 44, align: "tl" },
     { id: "color", x: 66, y: 42, labelX: 88, labelY: 38, align: "tr" },
     { id: "silhouette", x: 50, y: 78, labelX: 14, labelY: 74, align: "bl" },
+  ],
+  [
+    { id: "neckline", x: 49, y: 24, labelX: 77, labelY: 12, align: "tr" },
+    { id: "fabric", x: 37, y: 45, labelX: 10, labelY: 39, align: "tl" },
+    { id: "color", x: 63, y: 52, labelX: 89, labelY: 48, align: "tr" },
+    { id: "train", x: 54, y: 82, labelX: 15, labelY: 76, align: "bl" },
   ],
   [
     { id: "neckline", x: 48, y: 22, labelX: 76, labelY: 10, align: "tr" },
@@ -39,16 +45,10 @@ export const PHOTO_HOTSPOT_LAYOUTS: PhotoHotspotLayout[][] = [
     { id: "structure", x: 45, y: 68, labelX: 11, labelY: 64, align: "bl" },
   ],
   [
-    { id: "neckline", x: 51, y: 23, labelX: 79, labelY: 11, align: "tr" },
-    { id: "fabric", x: 33, y: 47, labelX: 8, labelY: 41, align: "tl" },
-    { id: "color", x: 67, y: 55, labelX: 91, labelY: 49, align: "tr" },
-    { id: "embellishment", x: 52, y: 62, labelX: 13, labelY: 58, align: "bl" },
-  ],
-  [
-    { id: "neckline", x: 49, y: 24, labelX: 77, labelY: 12, align: "tr" },
-    { id: "fabric", x: 37, y: 45, labelX: 10, labelY: 39, align: "tl" },
-    { id: "color", x: 63, y: 52, labelX: 89, labelY: 48, align: "tr" },
-    { id: "train", x: 54, y: 82, labelX: 15, labelY: 76, align: "bl" },
+    { id: "neckline", x: 50, y: 26, labelX: 78, labelY: 14, align: "tr" },
+    { id: "fabric", x: 36, y: 46, labelX: 10, labelY: 40, align: "tl" },
+    { id: "color", x: 64, y: 54, labelX: 90, labelY: 50, align: "tr" },
+    { id: "silhouette", x: 48, y: 74, labelX: 12, labelY: 70, align: "bl" },
   ],
 ];
 
@@ -68,14 +68,15 @@ export type DressVisual = {
   emissiveIntensity?: number;
 };
 
+/** Visuales 3D — orden alineado con lookbook */
 export const DRESS_VISUALS: DressVisual[] = [
   {
-    silhouette: "sheath",
-    colorHex: "#0a0a0a",
-    roughness: 0.18,
-    metalness: 0.08,
-    sheen: 0.85,
-    clearcoat: 0.6,
+    silhouette: "ballgown",
+    colorHex: "#f0e6dc",
+    roughness: 0.3,
+    metalness: 0.12,
+    sheen: 0.55,
+    clearcoat: 0.35,
   },
   {
     silhouette: "aline",
@@ -86,32 +87,6 @@ export const DRESS_VISUALS: DressVisual[] = [
     clearcoat: 0.15,
   },
   {
-    silhouette: "aline",
-    colorHex: "#c9a962",
-    roughness: 0.25,
-    metalness: 0.35,
-    sheen: 0.7,
-    clearcoat: 0.45,
-    emissive: "#c9a962",
-    emissiveIntensity: 0.08,
-  },
-  {
-    silhouette: "mermaid",
-    colorHex: "#141010",
-    roughness: 0.78,
-    metalness: 0.04,
-    sheen: 0.2,
-    clearcoat: 0.05,
-  },
-  {
-    silhouette: "ballgown",
-    colorHex: "#f0e6dc",
-    roughness: 0.3,
-    metalness: 0.12,
-    sheen: 0.55,
-    clearcoat: 0.35,
-  },
-  {
     silhouette: "architectural",
     colorHex: "#faf7f2",
     roughness: 0.22,
@@ -119,20 +94,52 @@ export const DRESS_VISUALS: DressVisual[] = [
     sheen: 0.48,
     clearcoat: 0.4,
   },
+  {
+    silhouette: "aline",
+    colorHex: "#e8dcd0",
+    roughness: 0.28,
+    metalness: 0.18,
+    sheen: 0.62,
+    clearcoat: 0.4,
+    emissive: "#e8dcd0",
+    emissiveIntensity: 0.06,
+  },
+  {
+    silhouette: "mermaid",
+    colorHex: "#2d4a3e",
+    roughness: 0.78,
+    metalness: 0.04,
+    sheen: 0.2,
+    clearcoat: 0.05,
+  },
+  {
+    silhouette: "sheath",
+    colorHex: "#c4b0a4",
+    roughness: 0.22,
+    metalness: 0.06,
+    sheen: 0.72,
+    clearcoat: 0.5,
+  },
 ];
 
 export const DRESS_HOTSPOTS: HotspotAnchor[][] = [
   [
-    { id: "neckline", position: [0, 1.72, 0.26] },
-    { id: "fabric", position: [0.28, 1.1, 0.18] },
-    { id: "color", position: [-0.24, 0.85, 0.22] },
-    { id: "silhouette", position: [0.32, 0.45, 0.12] },
+    { id: "neckline", position: [0, 1.78, 0.34] },
+    { id: "fabric", position: [0.38, 1.15, 0.22] },
+    { id: "color", position: [-0.32, 0.8, 0.28] },
+    { id: "embellishment", position: [0.35, 1.4, 0.26] },
   ],
   [
     { id: "neckline", position: [0, 1.75, 0.3] },
     { id: "fabric", position: [0.35, 1.2, 0.2] },
     { id: "color", position: [-0.3, 0.9, 0.25] },
     { id: "silhouette", position: [0.42, 0.35, 0.15] },
+  ],
+  [
+    { id: "neckline", position: [0, 1.74, 0.28] },
+    { id: "fabric", position: [0.3, 1.08, 0.2] },
+    { id: "color", position: [-0.26, 0.75, 0.2] },
+    { id: "train", position: [0.15, 0.08, 0.35] },
   ],
   [
     { id: "neckline", position: [0, 1.7, 0.24] },
@@ -147,15 +154,9 @@ export const DRESS_HOTSPOTS: HotspotAnchor[][] = [
     { id: "structure", position: [0.28, 1.25, 0.2] },
   ],
   [
-    { id: "neckline", position: [0, 1.78, 0.34] },
-    { id: "fabric", position: [0.38, 1.15, 0.22] },
-    { id: "color", position: [-0.32, 0.8, 0.28] },
-    { id: "embellishment", position: [0.35, 1.4, 0.26] },
-  ],
-  [
-    { id: "neckline", position: [0, 1.74, 0.28] },
-    { id: "fabric", position: [0.3, 1.08, 0.2] },
-    { id: "color", position: [-0.26, 0.75, 0.2] },
-    { id: "train", position: [0.15, 0.08, 0.35] },
+    { id: "neckline", position: [0, 1.72, 0.26] },
+    { id: "fabric", position: [0.28, 1.1, 0.18] },
+    { id: "color", position: [-0.24, 0.85, 0.22] },
+    { id: "silhouette", position: [0.32, 0.45, 0.12] },
   ],
 ];

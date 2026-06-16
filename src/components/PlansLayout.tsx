@@ -58,9 +58,9 @@ export function PlansLayout({ children, metaTitle, metaDescription }: Props) {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex items-center justify-between gap-3 flex-wrap">
           <a
             href="/"
-            className="font-display text-xl text-cream hover:text-gold transition-colors shrink-0"
+            className="font-display text-xl text-cream hover:text-accent transition-colors shrink-0"
           >
-            Ann <span className="text-gold italic">Atelier</span>
+            Ann <span className="text-accent italic">Atelier</span>
           </a>
 
           <div className="flex items-center gap-2 sm:gap-4 flex-wrap justify-end">
@@ -68,21 +68,21 @@ export function PlansLayout({ children, metaTitle, metaDescription }: Props) {
               type="button"
               onClick={onDownloadPdf}
               disabled={exporting}
-              className="plans-layout__pdf-btn min-h-[44px] px-4 sm:px-5 text-[0.6rem] uppercase tracking-[0.16em] font-medium text-ink bg-gold border border-gold hover:bg-transparent hover:text-gold transition-colors disabled:opacity-60"
+              className="plans-layout__pdf-btn min-h-[44px] px-4 sm:px-5 text-[0.6rem] uppercase tracking-[0.16em] font-medium text-ink bg-accent border border-accent hover:bg-transparent hover:text-accent transition-colors disabled:opacity-60"
             >
               {exporting ? t.plans.downloading : t.plans.downloadPdf}
             </button>
             <a
               href="/"
-              className="text-xs uppercase tracking-[0.2em] text-cream-muted hover:text-gold transition-colors min-h-[44px] flex items-center"
+              className="text-xs uppercase tracking-[0.2em] text-cream-muted hover:text-accent transition-colors min-h-[44px] flex items-center"
             >
               {t.legal.back}
             </a>
-            <ThemeToggle className="text-cream-muted hover:text-gold" />
+            <ThemeToggle className="text-cream-muted hover:text-accent" />
             <button
               type="button"
               onClick={toggleLocale}
-              className="text-xs uppercase tracking-[0.2em] text-cream-muted hover:text-gold transition-colors min-h-[44px] min-w-[44px]"
+              className="text-xs uppercase tracking-[0.2em] text-cream-muted hover:text-accent transition-colors min-h-[44px] min-w-[44px]"
               aria-label={locale === "en" ? "Cambiar a español" : "Switch to English"}
             >
               {locale === "en" ? "ES" : "EN"}

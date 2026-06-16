@@ -8,21 +8,11 @@ export type PlanTier = {
   features: string[];
 };
 
-export type FrontendOnlyOption = {
-  title: string;
-  tagline: string;
-  price: number;
-  description: string;
-  includes: string[];
-  excludes: string[];
-};
-
 export type PlansContent = {
   title: string;
   subtitle: string;
   date: string;
   intro: string;
-  frontendOnly: FrontendOnlyOption;
   tiersLabel: string;
   tiers: PlanTier[];
   notIncluded: { title: string; items: string[] };

@@ -12,6 +12,6 @@ export const BUSINESS = {
   lat: 29.7425,
   lng: -95.4132,
   priceRange: "$$$$",
-  instagram: "https://instagram.com/annatelier",
+  instagram: "https://instagram.com/annatelier_houston",
   pinterest: "https://pinterest.com/annatelier",
 } as const;

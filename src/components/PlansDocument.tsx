@@ -1,15 +1,19 @@
+import { useState } from "react";
+import { growthTimelineContent } from "../content/plans/growthTimeline";
 import type { PlansContent } from "../content/plans/types";
+import { GrowthTimelineModal } from "./GrowthTimelineModal";
 
 type Props = {
   doc: PlansContent;
   locale: "en" | "es";
   labels: {
     perMonth: string;
-    oneTime: string;
     minimum: string;
     recommended: string;
     includes: string;
     notIncluded: string;
+    schedule: string;
+    close: string;
   };
 };
 
@@ -22,6 +26,9 @@ function formatUsd(amount: number, locale: string) {
 }
 
 export function PlansDocument({ doc, locale, labels }: Props) {
+  const [timelineOpen, setTimelineOpen] = useState(false);
+  const timeline = growthTimelineContent[locale];
+
   return (
     <article className="plans-doc">
       <header className="plans-doc__header">
@@ -30,47 +37,6 @@ export function PlansDocument({ doc, locale, labels }: Props) {
         <p className="plans-doc__date">{doc.date}</p>
         <p className="plans-doc__intro">{doc.intro}</p>
       </header>
-
-      <section className="plans-doc__frontend-only" aria-labelledby="plans-frontend-only-title">
-        <article className="plans-frontend">
-          <div className="plans-frontend__main">
-            <div className="plans-frontend__head">
-              <h2 id="plans-frontend-only-title" className="plans-frontend__name">
-                {doc.frontendOnly.title}
-              </h2>
-              <p className="plans-frontend__tagline">{doc.frontendOnly.tagline}</p>
-            </div>
-
-            <p className="plans-frontend__price">
-              <span className="plans-frontend__amount">{formatUsd(doc.frontendOnly.price, locale)}</span>
-              <span className="plans-frontend__period">{labels.oneTime}</span>
-            </p>
-
-            <p className="plans-frontend__description">{doc.frontendOnly.description}</p>
-          </div>
-
-          <div className="plans-frontend__columns">
-            <div>
-              <p className="plans-frontend__col-label">{labels.includes}</p>
-              <ul className="plans-frontend__list">
-                {doc.frontendOnly.includes.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="plans-frontend__col-label plans-frontend__col-label--muted">
-                {labels.notIncluded}
-              </p>
-              <ul className="plans-frontend__list plans-frontend__list--muted">
-                {doc.frontendOnly.excludes.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </article>
-      </section>
 
       <section className="plans-doc__tiers-section" aria-labelledby="plans-tiers-title">
         <h2 id="plans-tiers-title" className="plans-doc__section-title">
@@ -86,6 +52,16 @@ export function PlansDocument({ doc, locale, labels }: Props) {
             >
               {tier.recommended ? (
                 <span className="plans-tier__badge">{labels.recommended}</span>
+              ) : null}
+
+              {tier.id === "growth" ? (
+                <button
+                  type="button"
+                  className="plans-tier__schedule"
+                  onClick={() => setTimelineOpen(true)}
+                >
+                  {labels.schedule}
+                </button>
               ) : null}
 
               <div className="plans-tier__head">
@@ -143,6 +119,14 @@ export function PlansDocument({ doc, locale, labels }: Props) {
       <footer className="plans-doc__footer">
         <p>{doc.footerNote}</p>
       </footer>
+
+      {timelineOpen ? (
+        <GrowthTimelineModal
+          timeline={timeline}
+          closeLabel={labels.close}
+          onClose={() => setTimelineOpen(false)}
+        />
+      ) : null}
     </article>
   );
 }

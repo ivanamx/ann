@@ -16,7 +16,7 @@ export function Marquee() {
             className="mx-3 max-[374px]:mx-2.5 min-[375px]:mx-6 sm:mx-10 font-display text-lg max-[374px]:text-xl min-[375px]:text-2xl sm:text-3xl text-cream/20 italic"
           >
             {word}
-            <span className="mx-3 max-[374px]:mx-2.5 min-[375px]:mx-6 sm:mx-10 text-gold/40 not-italic">◆</span>
+            <span className="mx-3 max-[374px]:mx-2.5 min-[375px]:mx-6 sm:mx-10 text-accent/40 not-italic">◆</span>
           </span>
         ))}
       </div>

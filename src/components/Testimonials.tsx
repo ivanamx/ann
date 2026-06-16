@@ -25,7 +25,7 @@ export function Testimonials() {
           </blockquote>
           <footer className="mt-5 min-[375px]:mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 min-[375px]:gap-4">
             <div>
-              <cite className="not-italic text-sm font-medium text-gold">{items[index].name}</cite>
+              <cite className="not-italic text-sm font-medium text-accent">{items[index].name}</cite>
               <p className="text-xs text-cream-muted mt-0.5">{items[index].event}</p>
             </div>
             <div className="flex gap-2" role="group" aria-label="Testimonial navigation">
@@ -34,7 +34,7 @@ export function Testimonials() {
                   key={i}
                   type="button"
                   className={`min-h-[44px] min-w-[44px] flex items-center justify-center ${
-                    i === index ? "text-gold" : "text-cream-muted hover:text-cream"
+                    i === index ? "text-accent" : "text-cream-muted hover:text-cream"
                   }`}
                   onClick={() => setIndex(i)}
                   aria-current={i === index ? "true" : undefined}
@@ -42,7 +42,7 @@ export function Testimonials() {
                 >
                   <span
                     className={`block h-1.5 rounded-full transition-all ${
-                      i === index ? "w-8 bg-gold" : "w-3 bg-cream/30"
+                      i === index ? "w-8 bg-accent" : "w-3 bg-cream/30"
                     }`}
                   />
                 </button>

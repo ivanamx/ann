@@ -5,28 +5,44 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:api": "tsx watch server/index.ts",
+    "seed:admin": "tsx server/scripts/seed-admin.ts",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "tsc -b --noEmit"
+    "lint": "tsc -b --noEmit && tsc -p server/tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/cors": "^11.2.0",
+    "@fastify/jwt": "^10.1.0",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "^0.45.2",
+    "fastify": "^5.8.5",
     "html2pdf.js": "^0.14.0",
     "leaflet": "^1.9.4",
+    "pg": "^8.21.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-leaflet": "^5.0.0",
-    "three": "^0.184.0"
+    "resend": "^6.12.4",
+    "three": "^0.184.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.8",
+    "@types/bcryptjs": "^2.4.6",
     "@types/leaflet": "^1.9.21",
+    "@types/pg": "^8.20.0",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "@types/three": "^0.184.1",
     "@vitejs/plugin-react": "^4.5.2",
+    "drizzle-kit": "^0.31.10",
     "tailwindcss": "^4.1.8",
+    "tsx": "^4.22.4",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
   }

@@ -25,22 +25,22 @@ export function LegalLayout({ children, metaTitle, metaDescription }: Props) {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
           <a
             href="/"
-            className="font-display text-xl text-cream hover:text-gold transition-colors"
+            className="font-display text-xl text-cream hover:text-accent transition-colors"
           >
-            Ann <span className="text-gold italic">Atelier</span>
+            Ann <span className="text-accent italic">Atelier</span>
           </a>
           <div className="flex items-center gap-3 sm:gap-5">
             <a
               href="/"
-              className="text-xs uppercase tracking-[0.2em] text-cream-muted hover:text-gold transition-colors min-h-[44px] flex items-center"
+              className="text-xs uppercase tracking-[0.2em] text-cream-muted hover:text-accent transition-colors min-h-[44px] flex items-center"
             >
               {t.legal.back}
             </a>
-            <ThemeToggle className="text-cream-muted hover:text-gold" />
+            <ThemeToggle className="text-cream-muted hover:text-accent" />
             <button
               type="button"
               onClick={toggleLocale}
-              className="text-xs uppercase tracking-[0.2em] text-cream-muted hover:text-gold transition-colors min-h-[44px] min-w-[44px]"
+              className="text-xs uppercase tracking-[0.2em] text-cream-muted hover:text-accent transition-colors min-h-[44px] min-w-[44px]"
               aria-label={locale === "en" ? "Cambiar a español" : "Switch to English"}
             >
               {locale === "en" ? "ES" : "EN"}

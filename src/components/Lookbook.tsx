@@ -1,8 +1,10 @@
+import type { CSSProperties } from "react";
 import { useState } from "react";
 import { useLocale } from "../i18n/LocaleContext";
 import { useReveal } from "../hooks/useReveal";
 import { LOOKBOOK_IMAGES } from "../data/images";
 import { DressModal } from "./DressModal";
+import { SectionHeader } from "./SectionHeader";
 
 export function Lookbook() {
   const { t, locale } = useLocale();
@@ -13,20 +15,19 @@ export function Lookbook() {
     <section
       id="lookbook"
       ref={ref}
-      className="reveal pt-8 pb-14 min-[375px]:pt-10 min-[375px]:pb-16 sm:pt-14 sm:pb-24 lg:pb-28 border-b border-cream/5"
+      className="reveal lookbook-section section-pad section-surface--soft grain relative border-b border-cream/5"
       aria-labelledby="lookbook-title"
     >
       <div className="mx-auto max-w-7xl px-3 min-[375px]:px-4 sm:px-6">
-        <header className="mb-8 min-[375px]:mb-10 sm:mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 min-[375px]:gap-4">
-          <div>
-            <h2 id="lookbook-title" className="font-display text-2xl min-[375px]:text-3xl sm:text-4xl text-cream">
-              {t.lookbook.title}
-            </h2>
-            <p className="mt-1.5 min-[375px]:mt-2 text-cream-muted text-[0.8125rem] min-[375px]:text-sm">{t.lookbook.subtitle}</p>
-          </div>
-        </header>
+        <SectionHeader
+          eyebrow={t.lookbook.eyebrow}
+          title={t.lookbook.title}
+          subtitle={t.lookbook.subtitle}
+          titleId="lookbook-title"
+          className="mb-8 min-[375px]:mb-10 sm:mb-14"
+        />
 
-        <div className="grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-3 gap-2 max-[374px]:gap-1.5 min-[375px]:gap-3 sm:gap-4 auto-rows-[minmax(180px,1fr)] min-[480px]:auto-rows-[minmax(140px,1fr)] sm:auto-rows-[minmax(180px,1fr)]">
+        <div className="lookbook-grid grid grid-cols-1 min-[480px]:grid-cols-2 md:grid-cols-3 gap-2.5 max-[374px]:gap-2 min-[375px]:gap-3 sm:gap-4 auto-rows-[minmax(180px,1fr)] min-[480px]:auto-rows-[minmax(140px,1fr)] sm:auto-rows-[minmax(180px,1fr)]">
           {t.lookbook.items.map((item, i) => {
             const image = LOOKBOOK_IMAGES[i];
             const alt = image.alt[locale];
@@ -35,15 +36,17 @@ export function Lookbook() {
               <button
                 key={item.title}
                 type="button"
-                className={`lookbook-card group relative overflow-hidden text-left bg-ink-soft ${
+                className={`lookbook-card lookbook-grid__item group relative overflow-hidden text-left bg-ink-soft atelier-card ${
                   i === 0
                     ? "lookbook-card--featured min-[480px]:col-span-2 min-[480px]:row-span-2 min-h-[200px] max-[374px]:min-h-[210px] min-[375px]:min-h-[240px] sm:min-h-[320px]"
                     : "min-h-[150px] max-[374px]:min-h-[145px] min-[480px]:min-h-[140px]"
-                } border border-cream/5 hover:border-gold/40 transition-all duration-500`}
+                }`}
+                style={{ "--card-index": i } as CSSProperties}
                 onClick={() => setActive(i)}
                 data-cursor-hover
                 aria-label={`${locale === "en" ? "View" : "Ver"} ${item.title} — ${item.event}`}
               >
+                <span className="atelier-card__shine" aria-hidden />
                 <img
                   src={image.src}
                   alt={alt}
@@ -61,10 +64,7 @@ export function Lookbook() {
                     <span className="lookbook-card__event">· {item.event}</span>
                   </h3>
                 </div>
-                <div
-                  className="lookbook-card__plus absolute top-3 right-3 min-[375px]:top-4 min-[375px]:right-4 w-7 h-7 min-[375px]:w-8 min-[375px]:h-8 rounded-full flex items-center justify-center text-base min-[375px]:text-lg"
-                  aria-hidden
-                >
+                <div className="lookbook-card__plus absolute top-3 right-3 min-[375px]:top-4 min-[375px]:right-4 w-7 h-7 min-[375px]:w-8 min-[375px]:h-8 rounded-full flex items-center justify-center text-base min-[375px]:text-lg" aria-hidden>
                   +
                 </div>
               </button>
