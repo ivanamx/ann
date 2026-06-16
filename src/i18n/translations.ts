@@ -758,7 +758,6 @@ export const translations = {
       labels: {
         perMonth: "/ mes",
         minimum: "Compromiso mínimo: {n} meses",
-        recommended: "Recomendado",
         includes: "Incluye",
         notIncluded: "No incluye",
         schedule: "Cronograma",
