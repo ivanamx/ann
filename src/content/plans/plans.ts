@@ -104,7 +104,7 @@ export const plansContent: PlansLocaleContent = {
   },
   es: {
     title: "Planes de Presencia Digital",
-    subtitle: "Ann Atelier · Houston, Texas",
+    subtitle: "Custom Designer · Houston, Texas",
     date: "Propuesta · Junio 2026",
     intro:
       "Planes mensuales",
