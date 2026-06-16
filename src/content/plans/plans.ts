@@ -7,6 +7,8 @@ export const plansContent: PlansLocaleContent = {
     date: "Proposal · June 2026",
     intro:
       "Monthly plans for your atelier online — launch, hosting, and ongoing care included. Stay live and receive consultation requests without managing technical details.",
+    estimatesDisclaimer:
+      "Monthly projections for a Houston custom atelier (quinceañera, gala & bridal). Based on metro search volume and typical inquiry-to-order conversion. Season (spring quince, fall gala) and your consultation close rate affect results.",
     tiersLabel: "Monthly plans",
     tiers: [
       {
@@ -15,6 +17,12 @@ export const plansContent: PlansLocaleContent = {
         tagline: "Stable online presence",
         price: 129,
         minimumMonths: 12,
+        estimates: {
+          context: "Passive presence · direct & referral traffic",
+          leadsPerMonth: "2–4",
+          salesPerMonth: "0–1",
+          note: "Steady baseline; no active local SEO or social push.",
+        },
         features: [
           "Full website launch (site + email + deploy)",
           "Hosting, domain & SSL included",
@@ -31,6 +39,12 @@ export const plansContent: PlansLocaleContent = {
         price: 279,
         minimumMonths: 12,
         recommended: true,
+        estimates: {
+          context: "Local discovery · Houston GBP & booking flow",
+          leadsPerMonth: "6–12",
+          salesPerMonth: "1–2",
+          note: "Google Maps + easier booking typically lift inquiries within 60–90 days.",
+        },
         features: [
           "Everything in Essential",
           "Appointment management via Telegram — bookings added directly to your phone",
@@ -46,6 +60,12 @@ export const plansContent: PlansLocaleContent = {
         tagline: "Launch solo — with clients in the pipeline",
         price: 449,
         minimumMonths: 12,
+        estimates: {
+          context: "Full funnel · SEO, social, email & nurture in Houston",
+          leadsPerMonth: "12–22",
+          salesPerMonth: "2–4",
+          note: "Aligns with 12-week growth target (~15+ contacts, 5+ consultations). Optional Meta Ads can add 5–8 leads/mo (ad budget separate).",
+        },
         features: [
           "Everything in Studio",
           "Contact follow-up — auto-reply plus gentle nurture emails for inquiries who haven’t booked yet (no hard selling; you handle the consultation)",
@@ -55,7 +75,7 @@ export const plansContent: PlansLocaleContent = {
           "Lookbook — up to 3 new pieces on the site each month",
           "Monthly lead report — form submissions, bookings, and contacts awaiting your personal reply",
           "Up to 1.5 hours/month technical maintenance (bugs, UI tweaks, image optimization)",
-          "Optional Meta Ads for Houston consultation leads — ad budget billed separately: $200–500/month (your card, your control)",
+          "Optional Meta Ads for Houston consultation leads — ad budget billed separately",
         ],
       },
     ],
@@ -87,7 +107,9 @@ export const plansContent: PlansLocaleContent = {
     subtitle: "Ann Atelier · Houston, Texas",
     date: "Propuesta · Junio 2026",
     intro:
-      "Planes mensuales para tu atelier en línea — lanzamiento, hosting y cuidado continuo incluido. Mantente en línea y recibe solicitudes de consulta sin gestionar detalles técnicos.",
+      "Planes mensuales",
+    estimatesDisclaimer:
+      "Proyecciones estimadas",
     tiersLabel: "Planes mensuales",
     tiers: [
       {
@@ -96,6 +118,12 @@ export const plansContent: PlansLocaleContent = {
         tagline: "Presencia online estable",
         price: 129,
         minimumMonths: 12,
+        estimates: {
+          context: "Presencia pasiva · tráfico directo y referidos",
+          leadsPerMonth: "2–4",
+          salesPerMonth: "0–1",
+          note: "Línea base estable; sin SEO local ni redes activas.",
+        },
         features: [
           "Lanzamiento completo (sitio + correo + publicación)",
           "Hosting, dominio y SSL incluidos",
@@ -112,12 +140,17 @@ export const plansContent: PlansLocaleContent = {
         price: 279,
         minimumMonths: 12,
         recommended: true,
+        estimates: {
+          context: "Descubrimiento local · GBP Houston y flujo de citas",
+          leadsPerMonth: "6–12",
+          salesPerMonth: "1–2",
+          note: "Google Maps + reserva más fácil suelen subir consultas en 60–90 días.",
+        },
         features: [
           "Todo lo incluido en Essential",
           "Gestión de agenda vía Telegram — citas agregadas directo a su celular",
           "Google Business Profile + revisión trimestral",
           "Analítica básica (GA4) + reporte trimestral de visitas y formularios",
-          "1 actualización al mes (hasta 30 min: lookbook, testimonios, textos de temporada)",
           "Soporte prioritario · respuesta en 48 h laborables",
         ],
       },
@@ -127,16 +160,20 @@ export const plansContent: PlansLocaleContent = {
         tagline: "Tu lanzamiento como atelier independiente",
         price: 449,
         minimumMonths: 12,
+        estimates: {
+          context: "Embudo completo · SEO, redes, correo y nurture en Houston",
+          leadsPerMonth: "12–22",
+          salesPerMonth: "2–4",
+          note: "Alineado con meta de 12 semanas (~15+ contactos, 5+ consultas). Meta Ads opcional suma 5–8 leads/mes (presupuesto aparte).",
+        },
         features: [
           "Todo lo incluido en Studio",
           "Seguimiento de contactos — acuse automático y correos de seguimiento amables para quienes aún no agendaron (sin ventas; tú cierras la consulta)",
           "Campaña de correo mensual — lookbook, temporada de eventos en Houston e invitación a consulta privada",
           "Instagram y Pinterest para atelier — 4 publicaciones al mes (proceso, fittings, piezas terminadas) + plantillas de stories",
           "SEO local mensual — búsquedas de vestidos a medida, galas y bodas en Houston",
-          "Lookbook — hasta 3 piezas nuevas al mes en el sitio",
           "Reporte mensual de leads — formularios, citas y contactos que requieren tu respuesta personal",
-          "Hasta 1.5 h/mes de mantenimiento técnico (errores, ajustes visuales, imágenes)",
-          "Meta Ads opcionales para consultas en Houston — presupuesto aparte: $200–500/mes (su tarjeta, su control)",
+          "Diseno de Meta Ads para consultas en Houston (presupuesto aparte)",
         ],
       },
     ],

@@ -1,3 +1,10 @@
+export type PlanEstimates = {
+  context: string;
+  leadsPerMonth: string;
+  salesPerMonth: string;
+  note: string;
+};
+
 export type PlanTier = {
   id: string;
   name: string;
@@ -5,6 +12,7 @@ export type PlanTier = {
   price: number;
   minimumMonths: number;
   recommended?: boolean;
+  estimates: PlanEstimates;
   features: string[];
 };
 
@@ -13,6 +21,7 @@ export type PlansContent = {
   subtitle: string;
   date: string;
   intro: string;
+  estimatesDisclaimer: string;
   tiersLabel: string;
   tiers: PlanTier[];
   notIncluded: { title: string; items: string[] };

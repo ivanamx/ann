@@ -2713,6 +2713,15 @@ body.dress-modal-open .mobile-cta-bar {
   color: var(--color-cream-muted);
 }
 
+.plans-doc__estimates-note {
+  margin: 0.75rem 0 0;
+  max-width: 42rem;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--color-cream-muted);
+  font-style: italic;
+}
+
 .plans-doc__section-title {
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 3vw, 1.65rem);
@@ -3005,6 +3014,62 @@ body.dress-modal-open .mobile-cta-bar {
   margin-bottom: 0.25rem;
 }
 
+.plans-tier__estimates {
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+}
+
+.plans-tier__estimates-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.plans-tier__estimates-context {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--color-cream-muted);
+}
+
+.plans-tier__estimates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 0.75rem;
+  margin: 0;
+}
+
+.plans-tier__estimates-grid div {
+  margin: 0;
+}
+
+.plans-tier__estimates-grid dt {
+  margin: 0;
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-cream-muted);
+}
+
+.plans-tier__estimates-grid dd {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--color-cream);
+}
+
+.plans-tier__estimates-note {
+  margin: 0.65rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: var(--color-cream-muted);
+}
+
 .plans-tier__features {
   flex: 1;
 }
@@ -3099,11 +3164,21 @@ body.dress-modal-open .mobile-cta-bar {
   color: #9a7d3c !important;
 }
 
+.plans-doc--exporting .plans-tier__estimates-grid dd {
+  color: #141210 !important;
+}
+
+.plans-doc--exporting .plans-tier__estimates {
+  background: #faf6ee !important;
+  border-color: rgba(154, 125, 60, 0.3) !important;
+}
+
 .plans-doc--exporting .plans-frontend__amount {
   color: #5a5248 !important;
 }
 
 .plans-doc--exporting .plans-doc__intro,
+.plans-doc--exporting .plans-doc__estimates-note,
 .plans-doc--exporting .plans-doc__date,
 .plans-doc--exporting .plans-frontend__description,
 .plans-doc--exporting .plans-frontend__tagline,
@@ -3112,6 +3187,9 @@ body.dress-modal-open .mobile-cta-bar {
 .plans-doc--exporting .plans-tier__tagline,
 .plans-doc--exporting .plans-tier__term,
 .plans-doc--exporting .plans-tier__best-for,
+.plans-doc--exporting .plans-tier__estimates-context,
+.plans-doc--exporting .plans-tier__estimates-grid dt,
+.plans-doc--exporting .plans-tier__estimates-note,
 .plans-doc--exporting .plans-tier__features li,
 .plans-doc--exporting .plans-doc__list li,
 .plans-doc--exporting .plans-doc__footer p,

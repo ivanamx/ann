@@ -14,6 +14,9 @@ type Props = {
     notIncluded: string;
     schedule: string;
     close: string;
+    estimates: string;
+    leadsPerMonth: string;
+    salesPerMonth: string;
   };
 };
 
@@ -36,6 +39,7 @@ export function PlansDocument({ doc, locale, labels }: Props) {
         <h1 className="plans-doc__title">{doc.title}</h1>
         <p className="plans-doc__date">{doc.date}</p>
         <p className="plans-doc__intro">{doc.intro}</p>
+        <p className="plans-doc__estimates-note">{doc.estimatesDisclaimer}</p>
       </header>
 
       <section className="plans-doc__tiers-section" aria-labelledby="plans-tiers-title">
@@ -79,6 +83,22 @@ export function PlansDocument({ doc, locale, labels }: Props) {
                 <p className="plans-tier__term">
                   {labels.minimum.replace("{n}", String(tier.minimumMonths))}
                 </p>
+              </div>
+
+              <div className="plans-tier__estimates">
+                <p className="plans-tier__estimates-label">{labels.estimates}</p>
+                <p className="plans-tier__estimates-context">{tier.estimates.context}</p>
+                <dl className="plans-tier__estimates-grid">
+                  <div>
+                    <dt>{labels.leadsPerMonth}</dt>
+                    <dd>{tier.estimates.leadsPerMonth}</dd>
+                  </div>
+                  <div>
+                    <dt>{labels.salesPerMonth}</dt>
+                    <dd>{tier.estimates.salesPerMonth}</dd>
+                  </div>
+                </dl>
+                <p className="plans-tier__estimates-note">{tier.estimates.note}</p>
               </div>
 
               <div className="plans-tier__features">
